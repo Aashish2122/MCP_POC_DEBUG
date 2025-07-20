@@ -22,6 +22,8 @@ public class AnalysisController {
 
     @PostMapping
     public ResponseEntity<DebugResponse> analyze(@Valid @RequestBody DebugRequest request) {
+
+        System.out.println("got hit");
         var result = analysisEngine.performAnalysis(
                 request.getRepoUrl(),
                 request.getErrorContext()
